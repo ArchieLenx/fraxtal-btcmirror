@@ -11,11 +11,14 @@ contract DeployBtcMirror is Script {
      * @notice Deploys BtcMirror and BtcTxVerifier, tracking either mainnet or
      *         testnet Bitcoin.
      */
-    function run(bool mainnet) external {
-        vm.broadcast();
+    function run(bool mainnet) public virtual returns (
+        BtcMirror mirror,
+        BtcTxVerifier verifier
+
+    ) {
+        vm.startBroadcast();
 
         // Deploy BtcMirror
-        BtcMirror mirror;
         if (mainnet) {
             // ...tracking Bitcoin mainnet, starting at block 739000
             mirror = new BtcMirror(
@@ -37,7 +40,7 @@ contract DeployBtcMirror is Script {
         }
 
         // Deploy the transaction verifier
-        new BtcTxVerifier(mirror);
+        verifier = new BtcTxVerifier(mirror);
 
         vm.stopBroadcast();
     }
