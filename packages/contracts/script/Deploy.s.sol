@@ -31,9 +31,9 @@ contract DeployBtcMirror is Script {
         } else {
             // ...tracking Bitcoin testnet, starting at block 2315360
             mirror = new BtcMirror(
-                2315360,
-                hex"0000000000000022201eee4f82ca053dfbc50d91e76e9cbff671699646d0982c",
-                1659901500,
+                2583113,
+                hex"0000000000000002d2b463e45508fabe5f555d05d74f5f585763cce8bebbb428",
+                1762128000,
                 0x000000000000003723C000000000000000000000000000000000000000000000,
                 true
             );
