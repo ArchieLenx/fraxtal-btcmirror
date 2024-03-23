@@ -28,8 +28,8 @@ export function createGetblockClient(
 ) {
   if (!apiKey) throw new Error("Missing GetBlock API key");
   return new JsonRpcClient({
-    url: `https://btc.getblock.io/${network}/`,
-    headers: { "x-api-key": apiKey },
+    url: `https://go.getblock.io/${apiKey}/`,
+    headers: { "Content-Type": 'application/json'},
   });
 }
 
