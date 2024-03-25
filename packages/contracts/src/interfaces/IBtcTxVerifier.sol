@@ -4,7 +4,9 @@ pragma solidity >=0.8.0;
 import "./BtcTxProof.sol";
 import "./IBtcMirror.sol";
 
-/** @notice Verifies Bitcoin transaction proofs. */
+/**
+ * @notice Verifies Bitcoin transaction proofs.
+ */
 interface IBtcTxVerifier {
     /**
      * @notice Verifies that the a transaction cleared, paying a given amount to
@@ -20,6 +22,8 @@ interface IBtcTxVerifier {
         uint256 amountSats
     ) external view returns (bool);
 
-    /** @notice Returns the underlying mirror associated with this verifier. */
+    /**
+     * @notice Returns the underlying mirror associated with this verifier.
+     */
     function mirror() external view returns (IBtcMirror);
 }

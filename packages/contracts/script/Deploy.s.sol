@@ -11,11 +11,7 @@ contract DeployBtcMirror is Script {
      * @notice Deploys BtcMirror and BtcTxVerifier, tracking either mainnet or
      *         testnet Bitcoin.
      */
-    function run(bool mainnet) public virtual returns (
-        BtcMirror mirror,
-        BtcTxVerifier verifier
-
-    ) {
+    function run(bool mainnet) public virtual returns (BtcMirror mirror, BtcTxVerifier verifier) {
         vm.startBroadcast();
 
         // Deploy BtcMirror

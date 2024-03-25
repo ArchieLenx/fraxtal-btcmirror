@@ -12,12 +12,8 @@ contract BtcTxVerifierTest is DSTest {
     // correct header for bitcoin block #717695
     // all bitcoin header values are little-endian:
     bytes constant b717695 = (
-        hex"04002020"
-        hex"edae5e1bd8a0e007e529fe33d099ebb7a82a06d6d63d0b000000000000000000"
-        hex"f8aec519bcd878c9713dc8153a72fd62e3667c5ade70d8d0415584b8528d79ca"
-        hex"0b40d961"
-        hex"ab980b17"
-        hex"3dcc4d5a"
+        hex"04002020" hex"edae5e1bd8a0e007e529fe33d099ebb7a82a06d6d63d0b000000000000000000"
+        hex"f8aec519bcd878c9713dc8153a72fd62e3667c5ade70d8d0415584b8528d79ca" hex"0b40d961" hex"ab980b17" hex"3dcc4d5a"
     );
 
     function testVerifyTx() public {
@@ -34,11 +30,8 @@ contract BtcTxVerifierTest is DSTest {
 
         // validate payment 736000 #1
         bytes memory header736000 = (
-            hex"04000020"
-            hex"d8280f9ce6eeebd2e117f39e1af27cb17b23c5eae6e703000000000000000000"
-            hex"31b669b35884e22c31b286ed8949007609db6cb50afe8b6e6e649e62cc24e19c"
-            hex"a5657c62"
-            hex"ba010917"
+            hex"04000020" hex"d8280f9ce6eeebd2e117f39e1af27cb17b23c5eae6e703000000000000000000"
+            hex"31b669b35884e22c31b286ed8949007609db6cb50afe8b6e6e649e62cc24e19c" hex"a5657c62" hex"ba010917"
             hex"36d09865"
         );
         bytes memory txProof736 = (
@@ -57,31 +50,14 @@ contract BtcTxVerifierTest is DSTest {
         );
         bytes32 txId736 = 0x3667d5beede7d89e41b0ec456f99c93d6cc5e5caff4c4a5f993caea477b4b9b9;
         bytes memory tx736 = (
-            hex"02000000"
-            hex"01"
-            hex"bb185dfa5b5c7682f4b2537fe2dcd00ce4f28de42eb4213c68fe57aaa264268b"
-            hex"01000000"
-            hex"17"
-            hex"16001407bf360a5fc365d23da4889952bcb59121088ee1"
-            hex"feffffff"
-            hex"02"
-            hex"8085800100000000"
-            hex"17"
-            hex"a914ae2f3d4b06579b62574d6178c10c882b9150374087"
-            hex"1c20590500000000"
-            hex"17"
-            hex"a91415ecf89e95eb07fbc351b3f7f4c54406f7ee5c1087"
-            hex"00000000"
+            hex"02000000" hex"01" hex"bb185dfa5b5c7682f4b2537fe2dcd00ce4f28de42eb4213c68fe57aaa264268b" hex"01000000"
+            hex"17" hex"16001407bf360a5fc365d23da4889952bcb59121088ee1" hex"feffffff" hex"02" hex"8085800100000000"
+            hex"17" hex"a914ae2f3d4b06579b62574d6178c10c882b9150374087" hex"1c20590500000000" hex"17"
+            hex"a91415ecf89e95eb07fbc351b3f7f4c54406f7ee5c1087" hex"00000000"
         );
         bytes20 destSH = hex"ae2f3d4b06579b62574d6178c10c882b91503740";
 
-        BtcTxProof memory txP = BtcTxProof(
-            header736000,
-            txId736,
-            1,
-            txProof736,
-            tx736
-        );
+        BtcTxProof memory txP = BtcTxProof(header736000, txId736, 1, txProof736, tx736);
 
         assertTrue(verif.verifyPayment(1, 736000, txP, 0, destSH, 25200000));
 
