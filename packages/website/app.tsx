@@ -30,7 +30,7 @@ function Header() {
 
 
 
-BITCOIN                                                   MIRROR
+ FRAXTAL BITCOIN                                   MIRROR
   `;
 
   const headerMirror = `
@@ -42,7 +42,7 @@ BITCOIN                                                   MIRROR
                            # # # # # #
                           # # # # # # # 
                          # # # # # # # # 
-                        # # # # # # # # # 
+                        # # # F X S # # # 
                        # # # # # # # # # #
                       # # # # # # # # # # #
                            # # # # # # 
@@ -89,17 +89,17 @@ BITCOIN                                                   MIRROR
 function Docs() {
   return (
     <div className="docs">
-      <h2>## BtcMirror is a Ethereum contract that tracks Bitcoin</h2>
+      <h2>##  Fraxtal BtcMirror is an EVM contract that tracks Bitcoin</h2>
       <p>
-        This lets you prove that a Bitcoin transaction executed, on Ethereum. It
+        This lets you prove that a Bitcoin transaction executed, on any EVM. It
         does this by running an on-chain light client.
       </p>
       <p>
         Anyone can submit block headers to BtcMirror. The contract verifies
         proof-of-work, keeping only the longest chain it has seen. As long as
         50% of Bitcoin hash power is honest and at least one person is running
-        the <a href="https://github.com/dcposch/btcmirror">submitter script</a>,
-        the BtcMirror contract always reports the current canonical Bitcoin
+        the <a href="https://github.com/ArchieLenx/btcmirror">submitter script</a>,
+        the Fraxtal BtcMirror contract always reports the current canonical Bitcoin
         chain.
       </p>
       <h2>## Example applications</h2>
@@ -139,7 +139,7 @@ function Docs() {
           🛠 built with <a href="https://github.com/gakonst/foundry">forge</a>{" "}
           and <a href="https://esbuild.github.io/">esbuild</a>
         </div>
-        <a href="https://github.com/dcposch/btcmirror">view on Github</a>
+        <a href="https://github.com/ArchieLenx/fraxtal-btcmirror">view on Github</a>
       </div>
     </div>
   );

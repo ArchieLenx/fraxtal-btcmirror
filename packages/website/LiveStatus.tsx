@@ -2,7 +2,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import BtcMirrorContract from "./BtcMirrorContract";
 
-type ChainID = "test" | "opt";
+type ChainID = "testnet" | "mainnet";
 
 interface Chain {
   id: ChainID;
@@ -17,19 +17,19 @@ interface Chain {
 
 const chains: Chain[] = [
   {
-    id: "test",
-    name: "TESTNET",
-    rpcUrl: "https://sepolia.infura.io/v3/c2098b0ca85643b1ad367c0f479c98f0",
-    contractAddr: "0xc8ba32cab1757528daf49033e3673fae77dcf05d",
+    id: "testnet",
+    name: "Fraxtal Testnet",
+    rpcUrl: "https://rpc.testnet.frax.com",
+    contractAddr: "0xEe844567BAF24cDda79bFb423f3F2b5fbe522398",
     explorerUrl:
-      "https://sepolia.etherscan.io/address/0xc8ba32cab1757528daf49033e3673fae77dcf05d",
-    explorerText: "View contract on Etherscan",
+      "https://holesky.fraxscan.com/address/0xDc9F553167F6Fa835177a35938fE4D72EAC90a4A",
+    explorerText: "View contract on Fraxtal Testnet Fraxscan",
     description:
-      "Sepolia is an Ethereum proof-of-stake testnet. This deployment tracks the Bitcoin testnet.",
+      "Fraxtal Testnet is an Ethereum L2 Testnet. This deployment tracks the Bitcoin testnet.",
   },
-  {
-    id: "opt",
-    name: "OPTIMISM",
+/*  {
+    id: "mainnet",
+    name: "Fraxtal Mainnet",
     rpcUrl:
       "https://opt-mainnet.g.alchemy.com/v2/UIWZJo9n_JabdfySOspT_ZwZfExy8UUs",
     contractAddr: "0x69ee459ca98cbdecf9156b041ee1621513aef0c6",
@@ -38,11 +38,11 @@ const chains: Chain[] = [
     explorerText: "View contract on Etherscan",
     description:
       "Bitcoin Mirror would be prohibitively expensive on L1. Optimism is a pioneering L2 optimistic rollup. It's over 10x cheaper, but still too expensive. I burned 0.5eth in a few weeks before giving up. After EIP 4844, Optimism will be much cheaper, and this contract will be up to date again.",
-  },
+  },*/
 ];
 
 export default function LiveStatus() {
-  const [chainId, setChainId] = useState<ChainID>("test");
+  const [chainId, setChainId] = useState<ChainID>("testnet");
   const chain = chains.find((c) => c.id === chainId)!;
 
   if (chain.contract == null) {
