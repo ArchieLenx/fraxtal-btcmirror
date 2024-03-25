@@ -22,7 +22,7 @@ const chains: Chain[] = [
     rpcUrl: "https://rpc.testnet.frax.com",
     contractAddr: "0xEe844567BAF24cDda79bFb423f3F2b5fbe522398",
     explorerUrl:
-      "https://holesky.fraxscan.com/address/0xDc9F553167F6Fa835177a35938fE4D72EAC90a4A",
+      "https://holesky.fraxscan.com/address/0xEe844567BAF24cDda79bFb423f3F2b5fbe522398",
     explorerText: "View contract on Fraxtal Testnet Fraxscan",
     description:
       "Fraxtal Testnet is an Ethereum L2 Testnet. This deployment tracks the Bitcoin testnet.",
