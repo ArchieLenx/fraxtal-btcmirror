@@ -1,0 +1,8 @@
+{
+  "BTCMIRROR_CONTRACT_ADDR": "DEPLOYED_ADDRESS_HERE",
+  "ETH_RPC_URL": "YOUR_NETWORK_RPC_HERE",
+  "ETH_SUBMITTER_PRIVATE_KEY": "YOUR_PRIVATE_KEY_HERE",
+  "GETBLOCK_API_KEY": "GET_BLOCK_API_KEY_HERE",
+  "BITCOIN_NETWORK": "testnet", // testnet or mainnet
+  "MAX_BLOCKS_PER_BATCH": "10" // number of blocks to process in a batch, 10 is good ish
+}

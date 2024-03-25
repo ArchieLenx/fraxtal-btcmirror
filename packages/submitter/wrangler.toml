@@ -15,8 +15,8 @@ ETH_RPC_URL="https://sepolia.infura.io/v3/c2098b0ca85643b1ad367c0f479c98f0"
 BITCOIN_NETWORK="mainnet"
 
 [env.testnet.vars]
-BTCMIRROR_CONTRACT_ADDR="0xc8ba32cab1757528daf49033e3673fae77dcf05d"
-ETH_RPC_URL="https://sepolia.infura.io/v3/c2098b0ca85643b1ad367c0f479c98f0"
+BTCMIRROR_CONTRACT_ADDR="0x53A633b21FC69Ff6D5aadECc56B80871C4507229"
+ETH_RPC_URL="https://rpc.testnet.frax.com"
 BITCOIN_NETWORK="testnet"
 
 [triggers]
