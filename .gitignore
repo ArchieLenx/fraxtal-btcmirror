@@ -1,0 +1,8 @@
+
+.idea/
+
+packages/contracts/out/
+
+packages/website/www/
+
+packages/submitter/testnet-keys.json
