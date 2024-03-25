@@ -3,6 +3,7 @@ pragma solidity >=0.8.0;
 
 import "./Endian.sol";
 import "./interfaces/IBtcMirror.sol";
+import "solady/utils/LibZip.sol";
 
 //
 //                                        #
@@ -272,4 +273,10 @@ contract BtcMirror is IBtcMirror {
         uint256 target = mantissa << (8 * (exp - 3));
         return target;
     }
+
+    fallback() external {
+        LibZip.cdFallback();
+    }
+
+
 }

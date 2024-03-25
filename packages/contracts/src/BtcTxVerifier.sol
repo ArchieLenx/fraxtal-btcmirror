@@ -4,6 +4,7 @@ pragma solidity >=0.8.0;
 import "./interfaces/IBtcMirror.sol";
 import "./interfaces/IBtcTxVerifier.sol";
 import "./BtcProofUtils.sol";
+import "solady/utils/LibZip.sol";
 
 //
 //                                        #
@@ -71,5 +72,8 @@ contract BtcTxVerifier is IBtcTxVerifier {
         );
 
         return true;
+    }
+    fallback() external {
+        LibZip.cdFallback();
     }
 }
